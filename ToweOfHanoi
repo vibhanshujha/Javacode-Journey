@@ -1,0 +1,24 @@
+package com.company;
+import java.lang.*;
+import java.util.*;
+
+public class TowerOfHanoi {
+    public static void Toh(int N, String Source,String dest,String helper){
+        //base case
+        if(N==0){
+            return;
+        }
+        //recursive case
+        Toh(N-1,Source,helper,dest);
+        System.out.println("I am taking disk "+N+" from "+Source+" to "+dest);
+        Toh(N-1,helper,dest,Source);
+    }
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        int N = sc.nextInt();;
+        String Source = sc.next();
+        String dest= sc.next();
+        String helper=sc.next();
+        Toh(N, Source, dest,helper);
+    }
+}
