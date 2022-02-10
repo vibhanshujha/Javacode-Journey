@@ -1,0 +1,33 @@
+public class Solution {
+    public String solve(String A) {
+      int count = 0;
+        int revCount=A.length();
+        for(int i =0;i<A.length();i++) {
+            if (A.charAt(i) == '*') {
+                count++;
+            }
+            else{
+                break;
+            }
+           
+        }
+         if(count==A.length()){
+                return "";
+            }
+        for(int i =0;i<A.length();i++){
+            if(A.charAt(A.length()-1-i)=='*'){
+                revCount--;
+            }
+            else{
+                break;
+            }
+    }
+    return A.substring(count,revCount);
+    }
+    
+     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        System.out.println(solve(s));
+    }
+}
