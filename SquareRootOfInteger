@@ -1,0 +1,22 @@
+
+public class SquareRootOfInteger {
+    public static int sqrt(int A) {
+        int i=1;
+        int root=0;
+        if(A==0){
+            return 0;
+        }
+        for(i=1;i<=A;i++){
+            if(i*i<=A && ((i+1)*(i+1)>A)){
+                return i;
+            }
+
+        }
+        return A;
+    }
+    public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       int A= sc.nextInt();
+        System.out.println(sqrt(A));
+    }
+}
